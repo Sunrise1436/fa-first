@@ -1,0 +1,19 @@
+
+div {
+    width: 200px;
+    height: 200px;
+    background: #333333;
+    margin: 20px;
+    font-size: 30px;
+    color: #ccc;
+    display: inline-block;
+    overflow: auto;
+}
+
+/*Position*/
+article:first-child div:nth-child(2) {
+    position: relative;
+    background: #0c1480;
+
+    /*right: 50px;*/
+}

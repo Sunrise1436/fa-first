@@ -1,0 +1,219 @@
+section:first-child {
+    font-size: 0;
+}
+div {
+    width: 200px;
+    height: 200px;
+    background: #333333;
+    margin: 20px;
+    font-size: 30px;
+    color: #ccc;
+    display: inline-block;
+    overflow: auto;
+}
+section:first-child div:nth-child(2),
+section:first-child div:nth-child(3),
+section:first-child div:nth-child(5) {
+    float: left;
+}
+section:first-child div:first-child {
+    float: right;
+}
+
+section:nth-child(2) div,
+section:nth-child(3) div {
+    float: left;
+}
+section:nth-child(2) div:nth-child(2),
+section:nth-child(3) div:nth-child(2) {
+    float: right;
+}
+section:nth-child(3) {
+    background: #cccccc;
+    overflow: hidden; /*альтернатива clearfix*/
+}
+.cleaner {
+    clear: both;
+    display: block;
+}
+section:before,
+section:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/*Position*/
+article:first-child div:nth-child(2) {
+    position: relative;
+    background: #0c1480;
+    top: 20px;
+    left: 30px;
+    /*right: 50px;*/
+}
+article:first-child div:nth-child(4) {
+    position: absolute;
+    background: #cc1516;
+    left: 50px;
+}
+article:first-child div:nth-child(9) {
+    position: fixed;
+    background: #2a8b05;
+    right: 20px;
+    bottom: 300px;
+}
+article {
+    position: relative;
+    border: 1px solid black;
+    margin: 50px;
+}
+
+article:first-child div:nth-child(12) {
+    position: sticky;
+    background: orangered;
+    top: 20px;
+}
+
+footer {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+}
+footer div {
+    border-radius: 50%;
+    position: absolute;
+}
+.r {
+    background: rgba(255,0,0,.7);
+    z-index: 2;
+}
+.g {
+    background: rgba(0,255,0,.7);
+    top: 100px;
+    left: -70px;
+    z-index: 1;
+}
+.b {
+    background: rgba(0,0,255,.7);
+    top: 100px;
+    left: 70px;
+}
+
+/*Transform*/
+main div,
+main span {
+    display: block;
+    overflow: initial;
+}
+main div {
+    margin: 20px auto;
+}
+main span {
+    height: 100%;
+    background: rgba(255,0,0,.7);
+}
+main div:nth-child(1) span {
+    transform: scale(1.1);
+}
+main div:nth-child(2) span {
+    transform: scaleX(1.8);
+}
+main div:nth-child(3) span {
+    transform: scale(0.5,1.2);
+}
+main div:nth-child(4) span {
+    transition: 0.5s;
+}
+main div:nth-child(4):hover span {
+    transform: scale(1.1);
+}
+main div:nth-child(5) span {
+    transform: translateX(50px);
+}
+main div:nth-child(6) span {
+    transform: translate(50px,20px);
+}
+main div:nth-child(7) span {
+    transform: rotate(30deg);
+}
+main div:nth-child(8) span {
+    transform: rotate(-30deg);
+}
+main div:nth-child(9) span {
+    transition: 0.5s;
+}
+main div:nth-child(9):hover span {
+    transform: rotate(720deg);
+}
+main div:nth-child(10) span {
+    transform: skew(30deg);
+}
+main div:nth-child(11) span {
+    transform: skew(30deg,10deg);
+}
+main div:nth-child(12) span {
+    transform: skew(30deg,-30deg);
+}
+main div:nth-child(13) span {
+    transition: 1s;
+}
+main div:nth-child(13):hover span {
+    transform: scale(1.1) rotate(300deg) translate(250px,200px);
+}
+main div:nth-child(14) span {
+    transform: rotate(30deg);
+    transform-origin: top left;
+}
+main div:nth-child(15) span {
+    transform: rotate(30deg);
+    transform-origin: center ;
+}
+main div:nth-child(16) {
+    position: relative;
+}
+main div:nth-child(16) span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+}
+main div:nth-child(17) {
+    perspective: 500px;
+}
+main div:nth-child(17) span {
+    transition: 600ms;
+}
+main div:nth-child(17):hover span {
+    transform: rotateY(30deg);
+}
+
+/*Border arrows*/
+b {
+    border: 50px solid transparent;
+    font-size: 0;
+    /*border-left-color: red;*/
+    /*border-left-color: rgba(0,0,0,0);*/
+    /*border-left-color: transparent;*/
+    /*border-right-color: green;*/
+    border-bottom-color: blue;
+}
+.arrow {
+    position: relative;
+}
+.arrow:before {
+    content: '';
+    position: absolute;
+    display: block;
+    font-size: 0;
+    border: 50px solid transparent;
+    border-left-color: #333;
+    top: 50%;
+    right: 0;
+    /*margin-top: -50px;*/
+    transform: translate(100%,-50%);
+}
+.arrow:last-child:before {
+    transform: translate(100%,-50%) scaleY(0.5);
+}
